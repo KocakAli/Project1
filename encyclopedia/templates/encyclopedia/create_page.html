@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create Page
+{% endblock %}
+
+{% block body %}
+    
+    <form action='{% url "enc:create" %}' method='POST'>
+        {% csrf_token %}    
+        <input type='text' placeholder="Entry Title" name='title'>
+        <textarea rows="1" cols="25" name='text_area' style='height: 250px;display: block;margin-top: 15px;'>This section for Markdown entry</textarea>
+        <input type='submit' value="Save" style='margin-top: 5px;'>
+    </form>
+
+{% endblock %}
